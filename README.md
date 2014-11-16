@@ -5,15 +5,15 @@
 
 
 ## About
-And MVC style auto-routing system used by [http://teslajs.com](Tesla.js).
+An MVC style auto-router for [Tesla.js](http://teslajs.com).
 
 
 ## How It Works
-This router will attempt to auto-load a controller based on the current URL. If you are using Tesla it comes ready to go out of the box. If you want to use it as a stand-alone router, see the installation section below.
+This router will attempt to auto-load a controller based on the current URL. If you are using [Tesla.js](http://teslajs.com) it comes ready to go out of the box. If you want to use it as a stand-alone router, see the [installation]([#installation--usage) section below.
 
-Following are some quick examples of how URL's are mapped to your controllers.
+Following is a quick walkthrough of how URL's are mapped to controllers.
 
-Going to [http://mysite.com/foo/bar](http://mysite.com/foo/bar) will attempt to load:
+For example, Going to [http://mysite.com/foo/bar](http://mysite.com/foo/bar) will attempt to load:
 
 
 #### File Structure
@@ -108,7 +108,7 @@ and lastly [http://mysite.com/my/name/is/steve](http://mysite.com/my/name/is/ste
 
 
 ## Installation & Usage
-This module i sbuilt to work with Tesla framework, but will also work as a stand-alone router (though it does require Express at a minimum).
+This module is built to work with the [Tesla.js](http://teslajs.com) framework, but will also work as a stand-alone router (though it does require Express 4 at a minimum).
 
 ##### Install
 
@@ -151,7 +151,7 @@ exports = module.exports = app;
 
 ## ERROR HANDLING
 
-Tesla includes an errorController to handle any errors. But, if you are using this as a stand-alone, you will need to create the file **app/controllers/errorController.js** with the following methods:
+[Tesla.js](http://teslajs.com) includes an error controller to handle any errors. But, if you are using this as a stand-alone, you will need to create the file **app/controllers/errorController.js** with the following methods:
 
 
 ```
