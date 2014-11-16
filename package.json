@@ -33,7 +33,6 @@
     "fs": "0.0.2",
     "path": "~0.4.9"
   },
-  "readme": "README.md",
   "_id": "tesla-router@0.1.0",
   "_shasum": "a55f7b900a3bf7d05d11603d7ff44a7e88b2ba40",
   "_from": "/Users/jesseweed/Sites/tesla-modules/tesla-router"
