@@ -9,33 +9,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/teslajs/tesla-router"
+    "url": "https://github.com/teslajs/router"
   },
   "homepage": "http://teslajs.com",
   "keywords": [
     "tesla",
+    "mvc"
     "router"
   ],
   "bugs": {
-    "url": "https://github.com/teslajs/tesla-router/issues"
+    "url": "https://github.com/teslajs/router/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/teslajs/tesla-router/blob/master/LICENSE"
+      "url": "https://github.com/teslajs/router/blob/master/LICENSE"
     }
   ],
   "engines": {
     "node": ">= 0.10.0"
   },
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "fs": "0.0.2",
     "path": "~0.4.9"
   },
-  "readme": "ERROR: No README data found!",
+  "readme": "README.md",
   "_id": "tesla-router@0.1.0",
   "_shasum": "a55f7b900a3bf7d05d11603d7ff44a7e88b2ba40",
   "_from": "/Users/jesseweed/Sites/tesla-modules/tesla-router"
