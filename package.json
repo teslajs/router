@@ -14,7 +14,7 @@
   "homepage": "http://teslajs.com",
   "keywords": [
     "tesla",
-    "mvc"
+    "mvc",
     "router"
   ],
   "bugs": {
