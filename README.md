@@ -9,7 +9,7 @@ An MVC style auto-router for [Tesla.js](http://teslajs.com).
 
 
 ## How It Works
-This router will attempt to auto-load a controller based on the current URL. If you are using [Tesla.js](http://teslajs.com) it comes ready to go out of the box (if you want to use it as a stand-alone router, see the installation steps below).
+This router will attempt to auto-load a controller based on the current URL. If you are using [Tesla](http://teslajs.com) it comes ready to go out of the box (if you want to use it as a stand-alone router, see the installation steps below).
 
 #### File Structure
 Next up is a quick walkthrough of how the router maps URL's to controllers. For example, Going to [http://mysite.com/foo/bar](http://mysite.com/foo/bar) will attempt to load:
@@ -104,7 +104,7 @@ and lastly [http://mysite.com/my/name/is/steve](http://mysite.com/my/name/is/ste
 
 
 ## Installation & Usage
-This module is built to work with the [Tesla.js](http://teslajs.com) framework, but will also work as a stand-alone router (though it does require Express 4 at a minimum).
+This module was built specifically to be used by the [Tesla](http://teslajs.com) framework, but will also work as a stand-alone router for any [Express](http://expressjs.com) based app.
 
 ##### Install
 
