@@ -9,14 +9,12 @@ An MVC style auto-router for [Tesla.js](http://teslajs.com).
 
 
 ## How It Works
-This router will attempt to auto-load a controller based on the current URL. If you are using [Tesla.js](http://teslajs.com) it comes ready to go out of the box. If you want to use it as a stand-alone router, see the [installation]([#installation--usage) section below.
-
-Following is a quick walkthrough of how URL's are mapped to controllers.
-
-For example, Going to [http://mysite.com/foo/bar](http://mysite.com/foo/bar) will attempt to load:
-
+This router will attempt to auto-load a controller based on the current URL. If you are using [Tesla.js](http://teslajs.com) it comes ready to go out of the box (if you want to use it as a stand-alone router, see the installation steps below).
 
 #### File Structure
+Next up is a quick walkthrough of how the router maps URL's to controllers. For example, Going to [http://mysite.com/foo/bar](http://mysite.com/foo/bar) will attempt to load:
+
+
 ```
 app/controllers/foo/barController.js
 ```
@@ -25,7 +23,6 @@ If it fails to find a file there, it will attempt to load:
 
 ```
 app/controllers/foor/bar/indexController.js
-
 ```
 
 If this also fails, the router will assume a more coplex controller and try this:
@@ -54,7 +51,6 @@ exports.bar  = function(app, req, res) {
 	// RENDER YOUR VIEWS HERE
 	res.render('index');
 }
-
 ```
 
 Either of these methods are acceptable if you are loading a single view in your controller, and will work with either **app/controllers/foo/barController.js** or **app/controllers/foo/bar/indexController.js**.
@@ -119,25 +115,26 @@ $ npm install tesla-router
 
 ##### Usage
 
-All that's required is to require the router after your express app has been created, and pass it the app object:
+All you need is to require the router after your express app has been created, and pass it the app object:
 
 ```
 require('tesla-router')(app);
 ```
 
-Here's a super basic barebones example:
+Here's a basic barebones example for a simple Express app:
 
 ```
 var express = require('express'), // GET EXPRESS
     app = module.exports = express(), // DEFINE THE APP
     server = require('http').createServer(app); // CREATE THE SERVER
 
-// IF YOU HAVE ANY CUSTOM ROUTES YOU WANT TO OVERRIDE THE AUT ROUTER WITH
-// THEY SHOULD COME FIRST (OPTIONAL)
+// IF YOU HAVE ANY CUSTOM ROUTES YOU WANT TO OVERRIDE THE AUTO ROUTER WITH
+// FOR EXAMPLE AN AUTH MIDDLEWARE, THEY SHOULD COME FIRST (BUT THIS OPTIONAL)
 
-// INCLUDE AUTO ROUTES
+// INCLUDE AUTO ROUTER
 require('tesla-router')(app);
 
+// START SERVER LISTENING ON PORT 3000
 server.listen( 3000 );
 
 // EXPOSE APP
@@ -145,13 +142,15 @@ exports = module.exports = app;
 
 ```
 
+##### Directory Structure
+It's worth noting that the router expects to find your controllers in the **app/controllers** directory. 
 
 
 
 
 ## ERROR HANDLING
 
-[Tesla.js](http://teslajs.com) includes an error controller to handle any errors. But, if you are using this as a stand-alone, you will need to create the file **app/controllers/errorController.js** with the following methods:
+[Tesla](http://teslajs.com) comes with an error controller to handle any errors. But, if you're using the router as a stand-alone, you will need to create the file **app/controllers/errorController.js** with the following methods:
 
 
 ```
@@ -177,7 +176,7 @@ exports.throw = function(app, req, res) {
 };
 
 
-// 404 ERROR
+// 404 ERRORS
 exports.throw404 = function(app, req, res) {
 
 	res.status(404).render('errors/404', {
@@ -190,7 +189,7 @@ exports.throw404 = function(app, req, res) {
 };
 
 
-// 500 ERROR
+// 500 ERRORS
 exports.throw500 = function(app, req, res) {
 
 	res.status(500).render('errors/500', {
@@ -205,4 +204,4 @@ exports.throw500 = function(app, req, res) {
 ```
 
 
-The file doesn't need to be exactly this, but the router will look for the file **app/controllers/errorController.js** with the throw, throw404 & throw500 methods.
+The file doesn't need to be exactly this, but any time it encounters an error, the router will look for the file **app/controllers/errorController.js** with *the throw*, *throw404* & *throw500* methods.
